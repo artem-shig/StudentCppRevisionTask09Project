@@ -43,5 +43,11 @@
  */
 
 int task03(int month, int year) {
-	return 0;
+	if (month <= 0 || month > 12) {
+		return 0;
+	}
+
+	return month == 2 ? (((year % 4 == 0 && year % 100 != 0)
+		|| year % 400 == 0) ? 29 : 28)
+		: ((month == 4 || month == 6 || month == 9 || month == 11) ? 30 : 31);
 }
