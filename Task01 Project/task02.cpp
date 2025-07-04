@@ -32,5 +32,11 @@
  */
 
 int task02(int a, int b, int c) {
-	return 0;
+
+	if (a == b || b == c || c == a) {
+		return 0;
+	}
+
+	return ((a > b && a < c) || (a > c && a < b)) ? a :
+		((b > a && b < c) || (b > c && b < a)) ? b : c;
 }
